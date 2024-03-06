@@ -1,8 +1,10 @@
 package com.example.sb.exercise;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/ex")
@@ -13,4 +15,20 @@ public class BasicController {
 
     }
 
+    @GetMapping("/noHtml")
+    @ResponseBody
+    public String noHtml(){
+        return "<h1>Hello Spring Boot!!!</h1>";
+    }
+
+    @GetMapping("/redirect")
+    public String redirect(){
+        return "redirect:/ex/hello";
+    }
+
+    @GetMapping("/params")
+    public String params(Model model){
+        model.addAttribute("name", "James");
+        return "exercise/params";
+    }
 }
