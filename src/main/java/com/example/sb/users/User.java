@@ -1,7 +1,7 @@
 package com.example.sb.users;
 
-import java.time.LocalDate;
 
+import java.time.LocalDate;
 public class User {
     private String uid;
     private String pwd;
